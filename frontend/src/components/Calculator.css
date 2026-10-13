@@ -1,0 +1,124 @@
+
+.calculator {
+  padding: 22px;
+  background: rgba(26, 27, 43, 0.95);
+  border: 1px solid #35364d;
+  border-radius: 28px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-display {
+  min-height: 145px;
+  padding: 18px 12px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.expression {
+  min-height: 22px;
+  color: #999bb6;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.result {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: right;
+  color: #ffffff;
+  font-size: clamp(32px, 8vw, 48px);
+  font-weight: 600;
+  letter-spacing: -1.5px;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.calculator-button {
+  min-width: 0;
+  min-height: 64px;
+  border: 1px solid #3a3b51;
+  border-radius: 18px;
+  background: #2b2c40;
+  color: #f5f5ff;
+  font-size: 21px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    transform 150ms ease;
+}
+
+.calculator-button:hover:not(:disabled) {
+  background: #393a54;
+}
+
+.calculator-button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.calculator-button.utility {
+  background: #393950;
+  color: #d1caff;
+  font-size: 16px;
+}
+
+.calculator-button.operator {
+  background: #302b50;
+  border-color: #51477f;
+  color: #b8adff;
+  font-size: 25px;
+}
+
+.calculator-button.operator:hover:not(:disabled) {
+  background: #413867;
+}
+
+.calculator-button.zero {
+  grid-column: span 2;
+}
+
+.calculator-button.equals {
+  background: #8876ff;
+  border-color: #8876ff;
+  color: white;
+}
+
+.calculator-button.equals:hover:not(:disabled) {
+  background: #7663ef;
+}
+
+.calculator-error {
+  color: #ff9caa;
+  background: #3c202b;
+  border: 1px solid #70404b;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  margin: 0 0 16px;
+}
+
+@media (max-width: 380px) {
+  .calculator {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .calculator-buttons {
+    gap: 8px;
+  }
+
+  .calculator-button {
+    min-height: 56px;
+    border-radius: 14px;
+  }
+}
